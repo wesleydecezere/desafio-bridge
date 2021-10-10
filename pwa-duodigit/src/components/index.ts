@@ -1,2 +1,2 @@
-export * from './results';
+export * from './resultsTable';
 export * from './header';

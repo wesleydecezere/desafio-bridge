@@ -1,39 +1,27 @@
 import React, { useState } from 'react';
 import { DataTable } from 'bold-ui';
 
-type RowType = {
+export type RowType = {
   [number: string]: number;
   duodigit: number;
   time: number;
 };
 
-const allRows = [{
-  number: 42,
-  duodigit: 1,
-  time: 3.1,
-},
-{
-  number: 34,
-  duodigit: 2,
-  time: 3.3,
-},
-{
-  number: 27,
-  duodigit: 3,
-  time: 3.2,
-}] as RowType[];
+type Props = {
+  data: RowType[];
+};
 
 const compareRows = (a: RowType, b: RowType, s: string): number => {
   const [sortParam, compareVal] = s[0] === '-' ? [s.slice(1), -1] : [s, 1];
   return a[sortParam] > b[sortParam] ? compareVal : -compareVal;
 };
 
-export const Results = (): JSX.Element => {
+export const ResultsTable = ({ data }: Props): JSX.Element => {
   const [params, setParams] = useState({
     sort: ['number'],
   });
 
-  const rows = allRows.sort((a, b) => compareRows(a, b, params.sort[0]));
+  const rows = data.sort((a, b) => compareRows(a, b, params.sort[0]));
 
   const handleSortChange = (sort: string[]) => setParams((state) => ({ ...state, sort }));
 
