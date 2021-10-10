@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text } from 'bold-ui';
+import { Text, VFlow } from 'bold-ui';
 
 export const Header = () => (
-  <div>
+  <VFlow style={{ 'padding-bottom': '30px' }}>
     <Text variant="h1"> Calculadora de menor múltiplo duodígito </Text>
     <Text variant="main">Descrição da aplicação.</Text>
-  </div>
+  </VFlow>
 );
