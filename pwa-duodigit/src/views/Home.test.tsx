@@ -11,7 +11,7 @@ test('renders an input field, a table and a button', () => {
   expect(tableEl).toBeInTheDocument();
   expect(buttonEl).toBeInTheDocument();
 });
-test.only('when types an number into input and clicks on the button, adds a non empty row to the table', () => {
+test('when types an number into input and clicks on the button, adds a non empty row to the table', () => {
   render(<Home />);
   const inputEl = screen.getByRole('spinbutton');
   const buttonEl = screen.getByRole('button');
