@@ -11,7 +11,7 @@ type Props = {
   data: RowType[];
 };
 
-const compareRows = (a: RowType, b: RowType, s: string): number => {
+export const compareRows = (a: RowType, b: RowType, s: string): number => {
   const [sortParam, compareVal] = s[0] === '-' ? [s.slice(1), -1] : [s, 1];
   return a[sortParam] > b[sortParam] ? compareVal : -compareVal;
 };
