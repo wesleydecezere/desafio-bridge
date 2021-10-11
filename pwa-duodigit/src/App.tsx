@@ -1,8 +1,6 @@
 import React from 'react';
-import { VFlow, Button, TextField } from 'bold-ui';
 import styled from 'styled-components';
-
-import { Results, Header } from './components';
+import { Header } from './components';
 import Home from './views/Home';
 
 const AppContainer = styled.div`
