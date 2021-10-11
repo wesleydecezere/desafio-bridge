@@ -5,7 +5,7 @@ import { Header } from './Header';
 test('renders an title and regular text', () => {
   render(<Header />);
   const titleEl = screen.getByRole('heading', { level: 1 });
-  const bodyEl = screen.getByRole('heading', { level: 6 });
+  const bodyEl = screen.getByLabelText('description');
 
   expect(titleEl).toBeInTheDocument();
   expect(bodyEl).toBeInTheDocument();
