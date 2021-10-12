@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import { VFlow, Button, TextField } from 'bold-ui';
-import { ResultsTable, RowType } from '../components';
+import { ResultsTable } from '../../components';
+import { RowType } from '../../types';
+import { checkSmallestDuodigitMultiple } from '../../services';
 
-const Home = () => {
+export const Home = () => {
   const [number, setNumber] = useState(0);
   const [results, setResults] = useState<RowType[]>([]);
 
+  const handleClick = async () => {
+    await checkSmallestDuodigitMultiple(number)
+      .then((record) => setResults((state) => state.concat(record)))
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setNumber(
     parseFloat(e.target.value),
   );
-  const handleClick = () => setResults((state) => state.concat({
-    number,
-    duodigit: 0,
-    time: 0,
-  }));
 
   return (
     <VFlow
@@ -42,5 +46,3 @@ const Home = () => {
     </VFlow>
   );
 };
-
-export default Home;

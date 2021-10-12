@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Header } from './components';
-import Home from './views/Home';
+import { Home } from './views';
 
 const AppContainer = styled.div`
   width: 90vw;

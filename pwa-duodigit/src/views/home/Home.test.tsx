@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Home from './Home';
+import { Home } from './Home';
 
 test('renders an input field, a table and a button', () => {
   render(<Home />);
