@@ -11,7 +11,7 @@ const hasNumberAlreadyBeenSubmitted = (n: number, arr: RowType[]): boolean => {
   return false;
 };
 
-export const Home = () => {
+export const Home = (): JSX.Element => {
   const [number, setNumber] = useState(0);
   const [results, setResults] = useState<RowType[]>([]);
   const [modal, setModal] = useState<JSX.Element>();

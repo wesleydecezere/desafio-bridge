@@ -3,7 +3,7 @@ import {
   Heading, HFlow, Icon, Modal, ModalBody,
 } from 'bold-ui';
 
-export const TimeExceededModal = () => {
+export const TimeExceededModal = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleModalClose = () => setIsOpen(false);

@@ -13,7 +13,7 @@ export const compareRows = (a: RowType, b: RowType, s: string): number => {
 
 export const ResultsTable = ({ data }: Props): JSX.Element => {
   const [params, setParams] = useState({
-    sort: ['-'],
+    sort: [''],
   });
 
   const rows = data.sort((a, b) => compareRows(a, b, params.sort[0]));

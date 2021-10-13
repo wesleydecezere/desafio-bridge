@@ -13,7 +13,7 @@ const AppContainer = styled.div`
   flex-direction: column;
 `;
 
-function App() {
+function App(): JSX.Element {
   return (
     <AppContainer>
       <Header />
