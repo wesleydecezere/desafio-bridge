@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { VFlow, Button, TextField } from 'bold-ui';
-import { ResultsTable } from '../../components';
+import { ResultsTable, TimeExceededModal } from '../../components';
 import { RowType } from '../../types';
 import { checkSmallestDuodigitMultiple } from '../../services';
 
 export const Home = () => {
   const [number, setNumber] = useState(0);
   const [results, setResults] = useState<RowType[]>([]);
+  const [modal, setModal] = useState<JSX.Element>();
 
   const handleClick = async () => {
     await checkSmallestDuodigitMultiple(number)
       .then((record) => setResults((state) => state.concat(record)))
-      .catch((error) => {
-        console.log(error.message);
+      .catch(() => {
+        setModal(<></>);
+        setModal(<TimeExceededModal />);
       });
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setNumber(
@@ -43,6 +45,7 @@ export const Home = () => {
       >
         Calcular
       </Button>
+      {modal}
     </VFlow>
   );
 };
