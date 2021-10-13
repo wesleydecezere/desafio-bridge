@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import { DataTable } from 'bold-ui';
-
-export type RowType = {
-  [number: string]: number;
-  duodigit: number;
-  time: number;
-};
+import { RowType } from '../../types';
 
 type Props = {
   data: RowType[];
