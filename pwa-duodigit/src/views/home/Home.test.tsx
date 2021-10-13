@@ -11,7 +11,7 @@ test('renders an input field, a table and a button', () => {
   expect(tableEl).toBeInTheDocument();
   expect(buttonEl).toBeInTheDocument();
 });
-test('when types an number into input and clicks on the button, adds a non empty row to the table', () => {
+test('when types an number into input and clicks on the button, adds a non empty row to the table', async () => {
   render(<Home />);
   const inputEl = screen.getByRole('spinbutton');
   const buttonEl = screen.getByRole('button');
@@ -20,5 +20,12 @@ test('when types an number into input and clicks on the button, adds a non empty
 
   fireEvent.input(inputEl, '999');
   fireEvent.click(buttonEl);
-  expect(emptyRowEl).not.toBeInTheDocument();
+
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(null);
+    }, 3000);
+  }).then(() => {
+    expect(emptyRowEl).not.toBeInTheDocument();
+  });
 });
