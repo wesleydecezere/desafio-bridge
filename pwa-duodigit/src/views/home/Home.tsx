@@ -41,7 +41,7 @@ export const Home = () => {
 
   return (
     <VFlow
-      vSpacing={1}
+      vSpacing={2}
       style={{
         justifyContent: 'space-between',
         flexGrow: 1,
