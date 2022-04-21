@@ -16,6 +16,8 @@ async function runPost(route: string, data: PostData): Promise<PostResponse<Post
     headers: { 'content-type': 'application/json' },
   };
 
+  console.log(path);
+
   return fetch(path, params)
     .then((res) => {
       if (!res.ok) { throw new Error('Communication has failed'); }

@@ -41,7 +41,7 @@ export const ResultsTable = ({ data }: Props): JSX.Element => {
             sortable: true,
           },
           {
-            header: 'Tempo cálculo',
+            header: 'Tempo cálculo [s]',
             name: 'time',
             render: ({ time }) => time,
             sortable: true,
